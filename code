@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>Restaurant Tip Calculator</h1>
+    </header>
+    <form action="javascript:void(calc())">
+        Amount: $<input id="bill" type="text">
+        <br>
+        <input type="submit" value="Calculate">
+        <br>
+      <br>
+        Tip: <span id="tip"></span>
+        <br>
+        Taxed: <span id="taxed"></span>
+        <br>
+        Bill Total: <span id="total"></span>
+    </form>
+    </div>
+<script>
+
+    function calc() {
+        var bill = Number(document.getElementById('bill').value);
+        var tax = bill * .07;
+        
+        var totalbill = bill + tax;
+        var tip = totalbill * .05;
+        
+        var billtotal = totalbill + tip;
+
+        document.getElementById("tip").innerHTML= "$"+Number(tip).toFixed(2);
+        document.getElementById("taxed").innerHTML= "$"+Number(totalbill).toFixed(2); 
+        document.getElementById("total").innerHTML= "$"+Number(billtotal).toFixed(2); 
+    }
+</script>
+
+</body>
